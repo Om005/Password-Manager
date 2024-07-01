@@ -46,7 +46,7 @@ const Signup = () => {
     }
   };
   const signup = async () => {
-    let key = "YOUR_API_KEY";
+    let key = `${import.meta.env.KEY}`;
     let url = `https://api.emailvalidation.io/v1/info?apikey=${key}&email=${form.email}`;
     let fetch_result = await fetch(url);
     let response = await fetch_result.json();
