@@ -82,3 +82,25 @@ All passwords are stored in a MongoDB database. Upon signing in, users can view 
 7. **Start the frontend development server:**
    ```bash
    npm run dev
+### Usage
+
+* Visit the frontend application at `http://localhost:3000`.
+* Sign up with your email and password.
+* Log in to access the password manager functionalities.
+* Use the application to save, edit, and delete your passwords.
+
+## Contributing
+
+Contributions are welcome! Please open an issue or submit a pull request for any improvements or suggestions.
+
+## Acknowledgements
+
+* [React.js](https://reactjs.org/)
+* [Express.js](https://expressjs.com/)
+* [MongoDB](https://www.mongodb.com/)
+* [emailvalidation.io](https://www.emailvalidation.io/)
+* [GSAP](https://greensock.com/gsap/)
+
+## Contact
+
+Feel free to reach out for any questions or feedback!
