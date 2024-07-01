@@ -64,10 +64,21 @@ All passwords are stored in a MongoDB database. Upon signing in, users can view 
 1. **Clone the repository:**
    ```bash
    git clone https://github.com/your-username/password-manager.git
-   cd password-manager
+2. **Navigate to the backend directory:**
+   ```bash
    cd backend
+3. **Install backend dependencies:**
+   ```bash
    npm install
+4. **Start the backend server:**
+   ```bash
    npm start
+5. **Navigate to the frontend:**
+   ```bash
    cd ..
+6. **Install frontend dependencies:**
+   ```bash
    npm install
+7. **Start the frontend development server:**
+   ```bash
    npm run dev
