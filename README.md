@@ -1,9 +1,6 @@
 # Password Manager
 
-🚀 Excited to share my latest project: Password Manager! 🚀
-
 🔒 Manage Your Passwords with Ease
-
 ## Key Features:
 
 - **Individual Password Storage**: Securely store separate passwords for different accounts.
