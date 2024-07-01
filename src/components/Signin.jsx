@@ -31,7 +31,8 @@ const Signin = () => {
     }
   };
   const signin = async () => {
-    let key = `${import.meta.env.KEY}`;
+    let key1 = await import.meta.env.VITE_KEY;
+    let key = `${key1}`
     let url = `https://api.emailvalidation.io/v1/info?apikey=${key}&email=${form.email}`;
     let fetch_result = await fetch(url);
     let response = await fetch_result.json();
