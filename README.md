@@ -81,7 +81,7 @@ All passwords are stored in a MongoDB database. Upon signing in, users can view 
    npm install
 7. **Make a .env.local file outside src and write :**
    ```bash
-   KEY = PASTE_YOUR_API_KEY_HERE
+   VITE_KEY = PASTE_YOUR_API_KEY_HERE
 8. **Start the frontend development server:**
    ```bash
    npm run dev
