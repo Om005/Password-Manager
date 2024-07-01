@@ -70,4 +70,4 @@ All passwords are stored in a MongoDB database. Upon signing in, users can view 
    npm start
    cd ..
    npm install
-   npm run dev```
+   npm run dev
