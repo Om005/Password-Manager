@@ -31,40 +31,44 @@ const Signin = () => {
     }
   };
   const signin = async () => {
-    let key1 = await import.meta.env.VITE_KEY;
-    let key = `${key1}`
-    let url = `https://api.emailvalidation.io/v1/info?apikey=${key}&email=${form.email}`;
-    let fetch_result = await fetch(url);
-    let response = await fetch_result.json();
-    if (
-      response.reason != "valid_mailbox" ||
-      response.smtp_check != true ||
-      response.state != "deliverable"
-    ) {
-      toast("Invalid email id", {
-        position: "top-right",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "light",
-      });
-      }
-    else {
-      fetch("http://localhost:3000/signin", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
+    fetch("http://localhost:3000/signin", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
         },
         redirect: "follow",
         referrerPolicy: "no-referrer",
         body: JSON.stringify(form), // Assuming 'form' contains your email and password data
       })
-        .then((response) => response.text()) // Convert response to text
-        .then((data) => {
-          if (data != "1") {
+      .then((response) => response.text()) // Convert response to text
+      .then(async(data) => {
+        if (data == "1") {
+          navigate("/passwords", { state: { data: form.email } });
+          return;
+        } 
+        let key1 = await import.meta.env.VITE_KEY;
+        let key = `${key1}`
+        console.log(key)
+        let url = `https://api.emailvalidation.io/v1/info?apikey=${key}&email=${form.email}`;
+        let fetch_result = await fetch(url);
+        let response = await fetch_result.json();
+        if (
+          response.reason != "valid_mailbox" ||
+          response.smtp_check != true ||
+          response.state != "deliverable"
+        ) {
+          toast("Invalid email id", {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+          });
+          }
+          else{
             toast(data, {
               position: "top-right",
               autoClose: 5000,
@@ -75,11 +79,8 @@ const Signin = () => {
               progress: undefined,
               theme: "light",
             });
-          } else {
-            navigate("/passwords", { state: { data: form.email } });
           }
         });
-    }
   };
   return (
     <>
